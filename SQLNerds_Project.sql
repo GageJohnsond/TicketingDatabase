@@ -53,7 +53,7 @@ CREATE TABLE Movie (
     duration INT NOT NULL CHECK (duration > 0), -- duration in minutes
     release_year INT NOT NULL CHECK (release_year >= 1900 AND release_year <= 2100),
     rating VARCHAR(10) NOT NULL CHECK (rating IN ('G', 'PG', 'PG-13', 'R', 'NC-17')),
-    description TEXT,
+    description TEXT, -- Maybe remove TEXT description from DB
     INDEX idx_movie_title (title),
     INDEX idx_movie_genre_year (genre, release_year)
 );
@@ -94,7 +94,7 @@ CREATE TABLE Ticket (
     booking_status VARCHAR(20) NOT NULL DEFAULT 'AVAILABLE' CHECK (booking_status IN ('AVAILABLE', 'RESERVED', 'SOLD')),
     price DECIMAL(6,2) NOT NULL CHECK (price >= 0),
     purchase_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    customer_email VARCHAR(100),
+    customer_email VARCHAR(100), -- Remove email as no reference to Customer DB
     FOREIGN KEY (showtime_id) REFERENCES Showtime(showtime_id) ON DELETE CASCADE,
     FOREIGN KEY (seat_id) REFERENCES Seat(seat_id) ON DELETE CASCADE,
     -- Prevent double booking of the same seat for the same showtime
