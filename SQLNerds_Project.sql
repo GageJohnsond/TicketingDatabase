@@ -193,13 +193,13 @@ INSERT INTO Theatre (theatre_name, capacity, venue_id) VALUES
 ('Main Hall', 250, 3);
 
 -- Insert Movies
-INSERT INTO Movie (title, genre, duration, release_year, rating, description) VALUES
-('The Dark Knight', 'Action', 152, 2008, 'PG-13', 'Batman faces the Joker in this epic superhero thriller.'),
-('Inception', 'Sci-Fi', 148, 2010, 'PG-13', 'A thief enters dreams to plant ideas in this mind-bending adventure.'),
-('Toy Story 4', 'Animation', 100, 2019, 'G', 'Woody and the gang embark on a new adventure with Forky.'),
-('Avengers: Endgame', 'Action', 181, 2019, 'PG-13', 'The Avengers assemble one final time to defeat Thanos.'),
-('The Shawshank Redemption', 'Drama', 142, 1994, 'R', 'Two imprisoned men bond over years, finding redemption.'),
-('Dune: Part Two', 'Sci-Fi', 166, 2024, 'PG-13', 'Paul Atreides unites with the Fremen to prevent a terrible future.');
+INSERT INTO Movie (title, genre, duration, release_year, rating) VALUES
+('The Dark Knight', 'Action', 152, 2008, 'PG-13'),
+('Inception', 'Sci-Fi', 148, 2010, 'PG-13'),
+('Toy Story 4', 'Animation', 100, 2019, 'G'),
+('Avengers: Endgame', 'Action', 181, 2019, 'PG-13'),
+('The Shawshank Redemption', 'Drama', 142, 1994, 'R'),
+('Dune: Part Two', 'Sci-Fi', 166, 2024, 'PG-13');
 
 -- Insert Showtimes (mix of past and future dates for testing)
 INSERT INTO Showtime (movie_id, theatre_id, show_date, start_time, end_time) VALUES
