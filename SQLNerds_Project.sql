@@ -268,19 +268,16 @@ WHERE s.theatre_id = seat.theatre_id;
 -- Book some sample tickets (marking them as SOLD)
 UPDATE Ticket SET 
     booking_status = 'SOLD',
-    customer_email = 'john.doe@email.com',
     purchase_timestamp = NOW()
 WHERE showtime_id = 1 AND seat_id IN (1, 2);
 
 UPDATE Ticket SET 
     booking_status = 'SOLD',
-    customer_email = 'jane.smith@email.com',
     purchase_timestamp = NOW()
 WHERE showtime_id = 2 AND seat_id IN (4, 5);
 
 UPDATE Ticket SET 
     booking_status = 'RESERVED',
-    customer_email = 'bob.wilson@email.com',
     purchase_timestamp = NOW()
 WHERE showtime_id = 3 AND seat_id = 10;
 
